@@ -7,4 +7,12 @@ Cinema.prototype.listOfTitles = function () {
 }
 
 
+Cinema.prototype.findFilmByTitle = function (title) {
+
+return this.films.find( film => film.title === title );
+
+
+};
+
+
 module.exports = Cinema;
