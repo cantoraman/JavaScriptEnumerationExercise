@@ -1,8 +1,8 @@
-const Film = function (title, genre, year, length) {
+const Film = function (title, genre, year, duration) {
   this.title = title;
   this.genre = genre;
   this.year = year;
-  this.length = length;
+  this.duration = duration;
 };
 
 module.exports = Film;
