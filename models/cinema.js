@@ -19,4 +19,8 @@ Cinema.prototype.allFilmsLongerThan = function (duration) {
   return this.films.length === this.films.filter(film => film.duration>=duration).length;
 };
 
+Cinema.prototype.filmFromYearExists = function (year) {
+    return 0 < this.films.filter(film => film.year==year).length;
+};
+
 module.exports = Cinema;

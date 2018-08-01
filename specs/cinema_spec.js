@@ -38,16 +38,21 @@ describe('Cinema', function () {
     assert.deepStrictEqual(result, dunkirk);
   });
 
-  it('should be able to filter films by genre');
+  it('should be able to filter films by property', function(){
 
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
+  });
+
+  it('should be able to check whether there are some films from a particular year or not', function(){
+    let result = cinema.filmFromYearExists(2017);
+    assert.strictEqual(result, true);
+    result = cinema.filmFromYearExists(1900);
+    assert.strictEqual(result, false);
+  });
+
   it('should be able to check whether all films are over a particular length', function(){
     const result = cinema.allFilmsLongerThan(60);
     assert.strictEqual(result, true)
   });
-
-
 
   it('should be able to calculate total running time of all films', function(){
     const result = cinema.getTotalRunTimeOfAll();
