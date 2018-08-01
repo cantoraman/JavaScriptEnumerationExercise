@@ -16,11 +16,18 @@ Cinema.prototype.getTotalRunTimeOfAll = function () {
 };
 
 Cinema.prototype.allFilmsLongerThan = function (duration) {
-  return this.films.length === this.films.filter(film => film.duration>=duration).length;
+
+  return this.films.every((film) => film.duration>duration);
+  // return this.films.length === this.films.filter(film => film.duration>=duration).length;
 };
 
 Cinema.prototype.filmFromYearExists = function (year) {
-    return 0 < this.films.filter(film => film.year==year).length;
+  return this.films.some((film)=>film.year==year);
+    // return 0 < this.films.filter(film => film.year==year).length;
+};
+
+Cinema.prototype.getFilmsByProperty = function (property, value) {
+ return this.films.filter(film => film[property] === value);
 };
 
 module.exports = Cinema;

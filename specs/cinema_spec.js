@@ -39,7 +39,12 @@ describe('Cinema', function () {
   });
 
   it('should be able to filter films by property', function(){
-
+    const result = cinema.getFilmsByProperty("genre", "drama");
+    assert.deepStrictEqual(result.length, 2)
+    const result2 = cinema.getFilmsByProperty("year", 2017);
+    assert.deepStrictEqual(result2.length, 3)
+    const result3 = cinema.getFilmsByProperty("duration", 111);
+    assert.deepStrictEqual(result3.length, 1)
   });
 
   it('should be able to check whether there are some films from a particular year or not', function(){
